@@ -67,3 +67,16 @@ jobs:
             pip install -r codecheck/requirements_codecheck.txt
             ./codecheck/run.sh
 
+      # release
+      - run:
+          name: release
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              cp release_settings/.pypirc $HOME
+              python3 -m venv venv
+              . venv/bin/activate
+              pip install -r release_settings/requirements.txt
+              python setup.py sdist
+              python setup.py bdist_wheel
+              twine upload dist/*
+            fi
