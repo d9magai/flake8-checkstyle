@@ -2,6 +2,10 @@
 History
 =======
 
+0.1.1 (2018-01-15)
+------------------
+* Modify release settings
+
 0.1.0 (2018-01-15)
 ------------------
 * Fixed some flake8 violations
