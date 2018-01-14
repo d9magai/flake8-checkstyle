@@ -21,7 +21,7 @@ test_requirements = [
 
 setup(
     name='flake8-checkstyle',
-    version='0.0.1',
+    version='0.1.0',
     description='Output Checkstyle XML reports of flake8 violations.',
     long_description=readme + '\n\n' + history,
     author='Daichi Kumagai',
