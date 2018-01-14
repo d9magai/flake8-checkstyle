@@ -1,7 +1,6 @@
 #!/bin/bash
 set -x
 
-echo "Start"
 if [ -n "$CIRCLE_PULL_REQUEST" ]; then
     CHECKSTYLE_XML=$(git diff origin/master...HEAD | flake8 --diff --format=checkstyle)
     if [[ $CHECKSTYLE_XML = *error* ]]; then
@@ -12,7 +11,5 @@ if [ -n "$CIRCLE_PULL_REQUEST" ]; then
         exit 1
     fi
 else
-    echo "PR does not exist"
+    echo "CIRCLE_PULL_REQUEST is empty"
 fi
-
-echo "End check ok!"
