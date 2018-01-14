@@ -73,10 +73,6 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               cp release_settings/.pypirc $HOME
-              python3 -m venv venv
-              . venv/bin/activate
-              pip install -r release_settings/requirements.txt
-              python setup.py sdist
-              python setup.py bdist_wheel
-              twine upload dist/*
+              echo "password:$PYPI_PASSWORD" >> $HOME/.pypirc
+              python setup.py sdist upload -r pypi
             fi
