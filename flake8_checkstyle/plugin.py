@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-r"""
-A plugin for flake8 to output Checkstyle XML reports.
+"""flake8-checkstyle - a flake8 plugin to output Checkstyle XML reports.
+
+This formatter plugin output XML to stdout.
 """
-
-
 from io import BytesIO
 from xml.etree import cElementTree as ET
 
@@ -33,6 +32,7 @@ class CheckstylePlugin(BaseFormatter):
     """A plugin for flake8 to output Checkstyle XML reports."""
 
     def __init__(self, options):
+        """Initialize members."""
         super(CheckstylePlugin, self).__init__(options)
         self.errors = []
         self.checkstyle_element = ET.Element('checkstyle')
