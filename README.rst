@@ -1,3 +1,6 @@
+.. image:: https://circleci.com/gh/d9magai/flake8-checkstyle/tree/master.svg?style=svg
+    :target: https://circleci.com/gh/d9magai/flake8-checkstyle/tree/master
+
 ==================
 flake8-checkstyle
 ==================
