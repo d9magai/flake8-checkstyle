@@ -34,7 +34,7 @@ class CheckstylePlugin(BaseFormatter):
     def __init__(self, options):
         """Initialize members."""
         super(CheckstylePlugin, self).__init__(options)
-        self.errors = []
+        self.errors=[]
         self.checkstyle_element = ET.Element('checkstyle')
 
     def beginning(self, _):
