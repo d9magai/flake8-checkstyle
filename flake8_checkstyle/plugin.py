@@ -39,7 +39,7 @@ class CheckstylePlugin(BaseFormatter):
 
     def beginning(self, _):
         """Reset the per-file list of errors."""
-        self.errors = []
+        self.errors=[]
 
     def handle(self, error):
         """Add an error to the end of the self.errors."""
