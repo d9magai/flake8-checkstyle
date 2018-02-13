@@ -43,7 +43,7 @@ class CheckstylePlugin(BaseFormatter):
 
     def handle(self, error):
         """Add an error to the end of the self.errors."""
-        self.errors.append((error))
+        self.errors.append(error)
 
     def finished(self, filename):
         """Make Checkystyle ElementTree."""
@@ -68,4 +68,9 @@ class CheckstylePlugin(BaseFormatter):
         et = ET.ElementTree(self.checkstyle_element)
         f = BytesIO()
         et.write(f, encoding='utf-8', xml_declaration=True)
-        print(f.getvalue().decode('utf-8'))
+        xml = f.getvalue().decode('utf-8')
+        if self.output_fd is None:
+            print(xml)
+        else:
+            self.output_fd.write(xml)
+        super(CheckstylePlugin, self).stop()  # closes output file
