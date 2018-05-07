@@ -2,6 +2,10 @@
 History
 =======
 
+0.1.2 (2018-05-07)
+------------------
+* Support for flake8 --output-file argument
+
 0.1.1 (2018-01-15)
 ------------------
 * Modify release settings
